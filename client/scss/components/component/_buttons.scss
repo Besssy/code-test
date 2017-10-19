@@ -6,7 +6,7 @@
 $btn-height: 50px!default;
 $btn-min-width: 10px!default;
 $btn-border-width: 1px!default;
-$btn-border-radius: 0px!default;
+$btn-border-radius: 5px!default;
 $btn-font-family: $hfont!default;
 $btn-font-size: 16px!default;
 $btn-font-weight: 400!default;
@@ -35,7 +35,8 @@ $buttons: (
 	white: ($white,$primary,$white),
 	danger: ($error,$white,$error),
 	warning: ($warning,$white,$warning),
-	success: ($success,$white,$success)
+	success: ($success,$white,$success),
+	pink: ($pink,$white,$pink)
 )!default;
 	
 
