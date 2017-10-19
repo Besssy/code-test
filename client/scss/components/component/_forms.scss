@@ -15,13 +15,13 @@ $form-label-font-weight: 400!default;
 $form-transition: all 0.3s linear!default;
 // Borders
 $form-border-radius: 4px!default;
-$form-border-width: 1px!default;
+$form-border-width: 2px!default;
 $form-border-style: solid!default;
 $form-border-color: $line!default;
 // Inputs, Textareas, Select, Option
 $form-input-height: 50px!default;
 $form-input-width: 100%!default;
-$form-input-max-width: 400px!default;
+$form-input-max-width: 580px!default;
 $form-input-bg-color: #fff!default;
 $form-input-padding: 0 14px!default;
 $form-input-margin: 0!default;
@@ -34,6 +34,7 @@ $form-input-error-icon: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTZweCIgaGVpZ
 $form-fieldset-bare: false!default;
 // textarea
 $form-textarea-padding: 14px!default;
+$form-textarea-height: 180px!default;
 // Select
 $form-select-bg-color: $form-input-bg-color!default;
 $form-select-dropdown-icon: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI2cHgiIHZpZXdCb3g9IjU1NCA1MyAxMCA2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8cG9seWdvbiBpZD0iVHJpYW5nbGUiIHN0cm9rZT0ibm9uZSIgZmlsbD0iIzg0ODQ4NCIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NTkuMDAwMDAwLCA1Ni4wMDAwMDApIHJvdGF0ZSgxODAuMDAwMDAwKSB0cmFuc2xhdGUoLTU1OS4wMDAwMDAsIC01Ni4wMDAwMDApICIgcG9pbnRzPSI1NTkgNTMgNTY0IDU5IDU1NCA1OSI+PC9wb2x5Z29uPjwvc3ZnPg=='!default;
@@ -120,6 +121,7 @@ option {
     color: $form-font-color;
 	margin: $form-input-margin;
     display: $form-display;
+    font-weight: $form-label-font-weight;
 }
 label {
     display: $form-display;
@@ -140,6 +142,13 @@ label {
 }
 input:invalid, textarea:invalid{
     box-shadow: none;
+}
+
+input:focus:invalid, input:required:invalid{
+	background-image: url('img/icon/solid/error.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;	
 }
 
 
@@ -203,6 +212,17 @@ input[list] {
 	    background: $form-input-bg-color;
 	    border: $form-border-width $form-border-style $form-state-valid;
     }
+    &:invalid:not(:focus):not(:placeholder-shown) {
+    	background: $form-input-bg-color url($form-input-error-icon) no-repeat right 14px center;
+	    background-size:16px 14px;
+	    border: $form-border-width $form-border-style $form-state-error;
+	    color: $form-state-error;
+    }
+    &:invalid:focus:not(:placeholder-shown) {
+        & ~ .requirements {
+          max-height: 200px;
+        }
+    }
 }
 
 
@@ -210,8 +230,37 @@ input[list] {
 textarea {
     -webkit-appearance: none;
     overflow: auto;
+    resize: none;
+    position: relative;
     padding:$form-textarea-padding;
+    min-height: $form-textarea-height;
+    &:required {
+	    background: $form-input-bg-color url($form-input-required-icon) no-repeat right 14px bottom 14px;
+	    background-size:8px;
+    }
+    &.error {
+	    background: $form-input-bg-color url($form-input-error-icon) no-repeat right 14px bottom 14px;
+	    background-size:16px 14px;
+	    border: $form-border-width $form-border-style $form-state-error;
+	    color: $form-state-error;
+    }
+    &.valid {
+	    background: $form-input-bg-color;
+	    border: $form-border-width $form-border-style $form-state-valid;
+    }
 }
+
+::-webkit-input-placeholder{
+	color: $darkgrey;
+	font-weight: 400;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
 input[type="file"] {
     min-height: $form-input-height;
 }
