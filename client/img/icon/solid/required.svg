@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 47 (45396) - http://www.bohemiancoding.com/sketch -->
     <title>icon/solid/required</title>
@@ -12,7 +12,7 @@
                 <use xlink:href="#path-1"></use>
             </mask>
             <use id="required" fill="#000000" xlink:href="#path-1"></use>
-            <g id="color/solid/primary" mask="url(#mask-2)" fill="#4A90E2">
+            <g id="color/solid/primary" mask="url(#mask-2)" fill="#0E3757">
                 <g transform="translate(-21.000000, -28.000000)" id="color">
                     <rect x="0" y="0" width="80" height="80"></rect>
                 </g>
