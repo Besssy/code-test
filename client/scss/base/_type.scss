@@ -161,6 +161,7 @@ small, .fs-8 {
 	}
 }
 .text-justify  { text-align: justify !important; }
+.text-center   {text-align: center !important}
 .text-nowrap   { white-space: nowrap !important; }
 .text-truncate { @include text-truncate; }
 
@@ -178,7 +179,7 @@ ul, ol {list-style: none;padding:0;}
 // Breaks
 hr {
 	border:0;
-	border-bottom:1px solid $line;
+	border-bottom:2px solid $line;
 	height:1px;
 	background:none;
 }
