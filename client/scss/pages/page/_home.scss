@@ -3,4 +3,274 @@
 /////////////////////////////////////////////////////////
 
 // Overides for home page here
-.home {}
+
+.nav-link {
+    padding-right: 1.5rem;
+}
+
+.bg-tropical{
+	background: url(/img/browser-image.png) no-repeat;
+	background-size: 100% 100%;
+	height: 600px;
+	width: 100%;
+	margin: auto;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.container-fluid{
+	max-width: 1355px;
+	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.service-number{
+	position: absolute;
+	color:#fff;
+	top: 63%;
+	right: 40%;
+}
+
+.service-badge{
+	background: url('/img/icon/service-badge.svg') no-repeat center center;
+	height: 150px;
+	position: relative;
+}
+
+.nav{
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav a{
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav.icon{
+  display: none;
+}
+
+.btn-close{
+  	display: none;
+  	position: absolute;
+  	top: 10px;
+  	right: 250px;
+}
+
+.icon-menu{
+    display: none;
+}
+
+.requirements{
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: $form-state-error;
+}
+
+.btn-submit{
+	margin-right: 28px;
+}
+
+.bottom-logo{
+	left: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+.copyrights{
+	right: 50%;
+}
+
+.placeholder {
+  bottom: 18%;
+  left: 30px;
+  position: absolute;
+  color: $darkgrey;
+}
+
+.fc-white{
+	color: $white;
+}
+
+.fc-darkgrey{
+	color: $darkgrey;
+}
+
+.fc-primary{
+	color: $primary;
+}
+
+@media screen and (max-width: 1200px) {
+	.bg-tropical{
+		max-height: 550px;
+	}
+    .we-do-awesome-things,
+	.we-do-really,
+	.testimonial,
+	.contact,
+		hr{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+}
+
+@media screen and (max-width: 992px) {
+    .bg-tropical{
+		height: 400px;
+	}
+	.nav a{
+  		display: none;
+    }
+    .icon-menu{
+    	float: right;
+    	display: block;
+    	color: $white;
+    }
+
+    #content{
+    	position: relative;
+    }
+
+    .nav.responsive {
+  		position: fixed;
+  		top: 0;
+  		right: 0;
+  		z-index: -1;
+  		background-color: $primary;
+  		height: 100%;
+    	padding: 30px 30px 0px 30px;
+    	width: 260px;
+  	}
+  	.nav{
+  		display: block;
+    } 
+    .nav.responsive a{
+    	float: none;
+    	display: block;
+    	text-align: center;
+    	color: $white;
+    }
+    .call-now{
+    	display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bg-tropical{
+		max-height: 300px;
+	}
+
+	.service-number {
+	    right: 45.5%;
+	}
+	.we-do-awesome-things,
+	.we-do-really,
+	.testimonial,
+	.contact{
+		br{
+			display: none;
+		}
+	}
+	.call-now{
+		text-align: center;
+		a{
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+    .bottom-logo{
+    	display: block;
+    	left: 0;
+    	padding-bottom: 30px;
+    	a{
+    		margin: auto;
+    	}
+    }
+    .copyrights{
+    	right: 0;
+    	text-align: center;
+    }
+    header {
+    	padding-left: 0px;
+    	align-items: center;
+    }
+    .logo.primary{
+    	background-size: 80px 50px;
+    	width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bg-tropical{
+		max-height: 200px
+	}
+	.contact{
+		justify-content: center;
+	}
+	.btn-submit{
+		justify-content: center;
+		margin-right: 0px;
+		button{
+			width: 100%;
+		}
+	}
+	footer{
+		justify-content: center;
+		text-align: center;
+	}
+
+	.service-number {
+	    right: 42.5%;
+	}
+
+	input{
+		&:required {
+	    	background: $form-input-bg-color url($form-input-required-icon) no-repeat right 0px bottom 14px !important;
+	    	background-size:8px !important;
+		}
+		&:invalid:not(:focus):not(:placeholder-shown) {
+	    	background: $form-input-bg-color url($form-input-error-icon) no-repeat right -5px center !important;
+    	}
+	}
+	textarea{ 
+		&:required {
+	    	background: $form-input-bg-color url($form-input-required-icon) no-repeat right 0px bottom 14px;
+	    	background-size:8px;
+		}
+	}
+}
+
+@media screen and (max-width: 420px) {
+    .service-number {
+	    right: 40%;
+	}
+	.testimonial{
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+		img{
+			width: 150%;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+    .bg-tropical{
+		max-height: 180px
+	}
+	.service-number {
+	    right: 38%;
+	}
+	.placeholder{
+		bottom: 20%;
+	}
+}
